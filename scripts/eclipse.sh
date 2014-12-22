@@ -1,7 +1,8 @@
-export ECLIPSE_VERSION=java-kepler-SR2
+# want to change version ? change url too
+export ECLIPSE_VERSION=java-luna-SR1
 
 echo "Retrieve Eclispe distribution"
-wget http://download.eclipse.org/technology/epp/downloads/release/kepler/SR2/eclipse-$ECLIPSE_VERSION-linux-gtk-x86_64.tar.gz
+wget http://download.eclipse.org/technology/epp/downloads/release/luna/SR1/eclipse-$ECLIPSE_VERSION-linux-gtk-x86_64.tar.gz
 tar -xvzf eclipse-$ECLIPSE_VERSION-linux-gtk-x86_64.tar.gz -C /usr/local
 rm eclipse-$ECLIPSE_VERSION-linux-gtk-x86_64.tar.gz
 chmod -R +r /usr/local/eclipse
@@ -9,8 +10,8 @@ echo export PATH=\$PATH:/usr/local/eclipse > /etc/profile.d/eclipse.sh
 echo setenv PATH \${PATH}:/usr/local/eclipse > /etc/profile.d/eclipse.csh
 
 echo "Generate Desktop launcher"
-mkdir /home/formation/Desktop/
-cat <<EOF >/home/formation/Desktop/eclipse.desktop
+mkdir /home/formation/Bureau/
+cat <<EOF >/home/formation/Bureau/Eclipse.desktop
 [Desktop Entry]
 Version=1.0
 Type=Application
@@ -19,7 +20,7 @@ Exec=/usr/local/eclipse/eclipse
 Icon=/usr/local/eclipse/icon.xpm
 Terminal=false
 EOF
-chmod +rwx /home/formation/Desktop/eclipse.desktop
+chmod +rwx /home/formation/Bureau/Eclipse.desktop
 
 echo "Update eclipse.ini"
 sed -i -e 's/-XX:MaxPermSize=256m/-XX:MaxPermSize=512m/g' /usr/local/eclipse/eclipse.ini
