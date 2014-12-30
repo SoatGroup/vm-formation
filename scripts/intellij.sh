@@ -1,4 +1,4 @@
-export INTELLIJ_VERSION=ideaIC-$1
+export INTELLIJ_VERSION=ideaIC-14.0.2
 
 # http://download.jetbrains.com/idea/ideaIC-13.1.1.tar.gz
 

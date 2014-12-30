@@ -3,8 +3,6 @@
 
 
 
-maven_version = "3.2.3"
-intellij_version = "14.0.2"
 
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
@@ -29,10 +27,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision "shell", path: "./scripts/tools.sh"
   config.vm.provision "shell", path: "./scripts/chef.sh"
   config.vm.provision "shell", path: "./scripts/docker.sh"
-  config.vm.provision "shell", path: "./scripts/maven.sh", args: [maven_version]
+  config.vm.provision "shell", path: "./scripts/maven.sh"
   config.vm.provision "shell", path: "./scripts/java.sh"
   config.vm.provision "shell", path: "./scripts/eclipse.sh"
-  config.vm.provision "shell", path: "./scripts/intellij.sh", args: [intellij_version]
+  config.vm.provision "shell", path: "./scripts/intellij.sh"
   config.vm.provision "shell", path: "./scripts/icones.sh"
   config.vm.provision "shell", path: "./scripts/cleanup.sh"
   

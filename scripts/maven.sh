@@ -1,4 +1,4 @@
-export MAVEN_VERSION=$1
+export MAVEN_VERSION=3.2.3
 
 echo "Retrieve maven $MAVEN_VERSION binaries"
 wget http://archive.apache.org/dist/maven/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz
